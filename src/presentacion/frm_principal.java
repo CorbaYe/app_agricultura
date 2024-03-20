@@ -13,6 +13,7 @@ public class frm_principal extends javax.swing.JFrame {
     public frm_principal() {
         initComponents();
         btn_actualizar_agricultor.setEnabled(false);
+        pnl_agricultor.setVisible(false);
     }
     private LinkedList<cls_agricultor> agricultor = new LinkedList<>();
     private boolean sw;
@@ -71,6 +72,13 @@ public class frm_principal extends javax.swing.JFrame {
         sw = false;
         pos = 0;
     }
+    private void fnt_mostrar_panel(){
+        if (pnl_agricultor.isVisible() == false) {
+            pnl_agricultor.setVisible(true);
+        }else{
+             pnl_agricultor.setVisible(false);
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -112,6 +120,11 @@ public class frm_principal extends javax.swing.JFrame {
         btn_agricultor.setForeground(new java.awt.Color(255, 255, 255));
         btn_agricultor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/recursos/farmer.png"))); // NOI18N
         btn_agricultor.setText("Agricultor");
+        btn_agricultor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agricultorActionPerformed(evt);
+            }
+        });
 
         btn_labores.setBackground(new java.awt.Color(5, 112, 147));
         btn_labores.setForeground(new java.awt.Color(255, 255, 255));
@@ -329,6 +342,10 @@ public class frm_principal extends javax.swing.JFrame {
     private void btn_actualizar_agricultorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_agricultorActionPerformed
         fnt_actualizar_agricultor();
     }//GEN-LAST:event_btn_actualizar_agricultorActionPerformed
+
+    private void btn_agricultorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agricultorActionPerformed
+        fnt_mostrar_panel();
+    }//GEN-LAST:event_btn_agricultorActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
