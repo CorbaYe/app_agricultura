@@ -19,9 +19,17 @@ public class frm_principal extends javax.swing.JFrame {
                 && !contacto_str.equals("") && !ubicacion_str.equals("")) {
             agricultor.add(new cls_agricultor(id_str, nombre_str, contacto_str, ubicacion_str));
             JOptionPane.showMessageDialog(null, "Agricultor registrado éxitosamente","AGRICULTOR",JOptionPane.INFORMATION_MESSAGE);
+            fnt_nuevo_agricultor();
         }else{
             JOptionPane.showMessageDialog(null, "Debe rellenar todos los datos solicitados","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
         }
+    }
+    private void fnt_nuevo_agricultor(){
+        txt_id_agricultor.setText("");
+        txt_contacto.setText("");
+        txt_nombre.setText("");
+        txt_ubicacion.setText("");
+        txt_id_agricultor.requestFocus();
     }
 
     @SuppressWarnings("unchecked")
@@ -132,6 +140,11 @@ public class frm_principal extends javax.swing.JFrame {
         btn_nuevo_agricultor.setBackground(new java.awt.Color(5, 112, 147));
         btn_nuevo_agricultor.setForeground(new java.awt.Color(255, 255, 255));
         btn_nuevo_agricultor.setText("Nuvo");
+        btn_nuevo_agricultor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuevo_agricultorActionPerformed(evt);
+            }
+        });
 
         btn_consultar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
         btn_consultar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
@@ -254,6 +267,10 @@ public class frm_principal extends javax.swing.JFrame {
     private void btn_guardar_agricultorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_agricultorActionPerformed
         fnt_guardar_agricultor(txt_id_agricultor.getText(), txt_nombre.getText(), txt_contacto.getText(), txt_ubicacion.getText());
     }//GEN-LAST:event_btn_guardar_agricultorActionPerformed
+
+    private void btn_nuevo_agricultorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevo_agricultorActionPerformed
+        fnt_nuevo_agricultor();
+    }//GEN-LAST:event_btn_nuevo_agricultorActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
