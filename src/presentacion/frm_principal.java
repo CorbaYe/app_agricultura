@@ -12,6 +12,7 @@ public class frm_principal extends javax.swing.JFrame {
     
     public frm_principal() {
         initComponents();
+        btn_actualizar_agricultor.setEnabled(false);
     }
     LinkedList<cls_agricultor> agricultor = new LinkedList<>();
     private void fnt_guardar_agricultor(String id_str, String nombre_str, String contacto_str, String ubicacion_str){
@@ -24,12 +25,38 @@ public class frm_principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe rellenar todos los datos solicitados","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
         }
     }
+    private void fnt_consultar_agricultor(String id_str){
+        boolean sw = false;
+        int pos = 0;
+        
+        if (!id_str.equals("")) {
+            for(int i = 0; i < agricultor.size(); i++){
+                if (agricultor.get(i).getId_str().equals(id_str)) {
+                    sw = true;
+                    pos = i;
+                }
+            }
+            if (sw) {
+                txt_contacto.setText(agricultor.get(pos).getContacto_str());
+                txt_nombre.setText(agricultor.get(pos).getNombre_str());
+                txt_ubicacion.setText(agricultor.get(pos).getUbicacion_str());
+                txt_id_agricultor.setEnabled(false);
+                btn_actualizar_agricultor.setEnabled(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "No se encontraron registros","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe ingresar un ID válido","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
+        }
+    }
     private void fnt_nuevo_agricultor(){
         txt_id_agricultor.setText("");
         txt_contacto.setText("");
         txt_nombre.setText("");
         txt_ubicacion.setText("");
         txt_id_agricultor.requestFocus();
+        txt_id_agricultor.setEnabled(true);
+        btn_actualizar_agricultor.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -149,6 +176,11 @@ public class frm_principal extends javax.swing.JFrame {
         btn_consultar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
         btn_consultar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
         btn_consultar_agricultor.setText("Consultar");
+        btn_consultar_agricultor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultar_agricultorActionPerformed(evt);
+            }
+        });
 
         btn_guardar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
         btn_guardar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
@@ -271,6 +303,10 @@ public class frm_principal extends javax.swing.JFrame {
     private void btn_nuevo_agricultorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevo_agricultorActionPerformed
         fnt_nuevo_agricultor();
     }//GEN-LAST:event_btn_nuevo_agricultorActionPerformed
+
+    private void btn_consultar_agricultorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_agricultorActionPerformed
+        fnt_consultar_agricultor(txt_id_agricultor.getText());
+    }//GEN-LAST:event_btn_consultar_agricultorActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
