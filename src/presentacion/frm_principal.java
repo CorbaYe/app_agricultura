@@ -67,6 +67,17 @@ public class frm_principal extends javax.swing.JFrame {
         btn_labores = new javax.swing.JButton();
         btn_registro = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        pnl_cultivos = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_cod_cultivo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_nombre_cultivo = new javax.swing.JTextField();
+        Contacto1 = new javax.swing.JLabel();
+        txt_area_cultivo = new javax.swing.JTextField();
+        btn_nuevo_cultivo = new javax.swing.JButton();
+        btn_consultar_cultivo = new javax.swing.JButton();
+        btn_guardar_cultivo = new javax.swing.JButton();
+        btn_actualizar_cultivo = new javax.swing.JButton();
         pnl_agricultor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txt_id_agricultor = new javax.swing.JTextField();
@@ -143,6 +154,118 @@ public class frm_principal extends javax.swing.JFrame {
         );
 
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnl_cultivos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cultivos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setText("Codigo:");
+
+        txt_cod_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel5.setText("Nombre:");
+
+        txt_nombre_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        Contacto1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Contacto1.setText("Area(m^2:)");
+
+        txt_area_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        btn_nuevo_cultivo.setBackground(new java.awt.Color(5, 112, 147));
+        btn_nuevo_cultivo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_nuevo_cultivo.setText("Nuevo");
+        btn_nuevo_cultivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuevo_cultivoActionPerformed(evt);
+            }
+        });
+
+        btn_consultar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
+        btn_consultar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_consultar_cultivo.setText("Consultar");
+        btn_consultar_cultivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultar_cultivoActionPerformed(evt);
+            }
+        });
+
+        btn_guardar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
+        btn_guardar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_guardar_cultivo.setText("Guardar");
+        btn_guardar_cultivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardar_cultivoActionPerformed(evt);
+            }
+        });
+
+        btn_actualizar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
+        btn_actualizar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_actualizar_cultivo.setText("Actualizar");
+        btn_actualizar_cultivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actualizar_cultivoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnl_cultivosLayout = new javax.swing.GroupLayout(pnl_cultivos);
+        pnl_cultivos.setLayout(pnl_cultivosLayout);
+        pnl_cultivosLayout.setHorizontalGroup(
+            pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cultivosLayout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_consultar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btn_nuevo_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_guardar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_actualizar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
+            .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                        .addComponent(Contacto1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_area_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_nombre_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_cod_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl_cultivosLayout.setVerticalGroup(
+            pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txt_cod_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txt_nombre_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Contacto1)
+                    .addComponent(txt_area_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_nuevo_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(btn_guardar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_actualizar_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultar_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.add(pnl_cultivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
 
         pnl_agricultor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agricultor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
 
@@ -323,6 +446,22 @@ public class frm_principal extends javax.swing.JFrame {
         fnt_mostrar_panel_agricultor();
     }//GEN-LAST:event_btn_agricultorActionPerformed
 
+    private void btn_nuevo_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevo_cultivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_nuevo_cultivoActionPerformed
+
+    private void btn_consultar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_cultivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_consultar_cultivoActionPerformed
+
+    private void btn_guardar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_cultivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_guardar_cultivoActionPerformed
+
+    private void btn_actualizar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_cultivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_actualizar_cultivoActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -357,24 +496,35 @@ public class frm_principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Contacto;
+    private javax.swing.JLabel Contacto1;
     protected javax.swing.JButton btn_actualizar_agricultor;
+    protected javax.swing.JButton btn_actualizar_cultivo;
     private javax.swing.JButton btn_agricultor;
     private javax.swing.JButton btn_consultar_agricultor;
+    private javax.swing.JButton btn_consultar_cultivo;
     private javax.swing.JButton btn_cultivos;
     private javax.swing.JButton btn_guardar_agricultor;
+    private javax.swing.JButton btn_guardar_cultivo;
     private javax.swing.JButton btn_labores;
     private javax.swing.JButton btn_nuevo_agricultor;
+    private javax.swing.JButton btn_nuevo_cultivo;
     private javax.swing.JButton btn_registro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     protected javax.swing.JPanel pnl_agricultor;
+    protected javax.swing.JPanel pnl_cultivos;
+    protected javax.swing.JTextField txt_area_cultivo;
+    protected javax.swing.JTextField txt_cod_cultivo;
     protected javax.swing.JTextField txt_contacto;
     protected javax.swing.JTextField txt_id_agricultor;
     protected javax.swing.JTextField txt_nombre;
+    protected javax.swing.JTextField txt_nombre_cultivo;
     protected javax.swing.JTextField txt_ubicacion;
     // End of variables declaration//GEN-END:variables
 }
