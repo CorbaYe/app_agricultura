@@ -55,6 +55,16 @@ public class cls_cultivos_manager {
             JOptionPane.showMessageDialog(null, "Debe ingresar un CÓDIGO válido","CULTIVOS",JOptionPane.WARNING_MESSAGE);
         }
     }
+    
+    public void fnt_actualizar_cultivos(String nombre_str, String area_str){
+        if (!nombre_str.equals("") && !area_str.equals("") && sw){
+            cultivos.get(pos).setNombre_str(nombre_str);
+            cultivos.get(pos).setArea_metros_str(area_str);
+            JOptionPane.showMessageDialog(null, "Cultivo actualizado éxitosamente","CULTIVOS",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe rellenar toda la información solicitada","CULTIVOS",JOptionPane.WARNING_MESSAGE);
+        }
+    }
 
     public boolean isSw() {
         return sw;

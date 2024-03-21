@@ -40,11 +40,11 @@ public class frm_principal extends javax.swing.JFrame {
     } 
     
     ///Agricultor
-    public void fnt_guardar_agricultor(String id_str, String nombre_str, String contacto_str, String ubicacion_str){
+    private void fnt_guardar_agricultor(String id_str, String nombre_str, String contacto_str, String ubicacion_str){
        agricultor_manager.fnt_guardar_agricultor(id_str, nombre_str, contacto_str, ubicacion_str);
        fnt_nuevo_agricultor();
     }
-    public void fnt_nuevo_agricultor(){
+    private void fnt_nuevo_agricultor(){
         agricultor_manager.setSw(false);
         agricultor_manager.setPos(0);
         agricultor_manager.setBoton_actualizar(false);
@@ -59,7 +59,7 @@ public class frm_principal extends javax.swing.JFrame {
         txt_id_agricultor.setEnabled(true);
     }
 
-    protected void fnt_consultar_agricultor(String id_str){
+    private void fnt_consultar_agricultor(String id_str){
         agricultor_manager.fnt_consultar_agricultor(id_str);
         txt_contacto.setText(agricultor_manager.getContacto());
         txt_nombre.setText(agricultor_manager.getNombre());
@@ -67,16 +67,16 @@ public class frm_principal extends javax.swing.JFrame {
         txt_id_agricultor.setEnabled(agricultor_manager.isId_actualizar());
         btn_actualizar_agricultor.setEnabled(agricultor_manager.isBoton_actualizar());
     }
-    protected void fnt_actualizar_agricultor(){
+    private void fnt_actualizar_agricultor(){
         agricultor_manager.fnt_actualizar_agricultor(txt_nombre.getText(), txt_contacto.getText(), txt_ubicacion.getText());
     }
     
     ///Cultivo
-    public void fnt_guardar_cultivo(String codigo_str, String nombre_str, String area_str){
+    private void fnt_guardar_cultivo(String codigo_str, String nombre_str, String area_str){
        cultivo_manager.fnt_guardar_cultivo(codigo_str, nombre_str, area_str);
        fnt_nuevo_cultivo();
     }
-    public void fnt_nuevo_cultivo(){
+    private void fnt_nuevo_cultivo(){
         cultivo_manager.setSw(false);
         cultivo_manager.setPos(0);
         cultivo_manager.setBoton_actualizar(false);
@@ -88,6 +88,13 @@ public class frm_principal extends javax.swing.JFrame {
         txt_cod_cultivo.requestFocus();
         btn_actualizar_cultivo.setEnabled(false);
         txt_cod_cultivo.setEnabled(true);
+    }
+    private void fnt_consultar_cultivo(String codigo_str){
+        cultivo_manager.fnt_consultar_cultivo(codigo_str);
+        txt_nombre_cultivo.setText(cultivo_manager.getNombre());
+        txt_area_cultivo.setText(cultivo_manager.getArea());
+        txt_cod_cultivo.setEnabled(cultivo_manager.isId_actualizar());
+        btn_actualizar_cultivo.setEnabled(cultivo_manager.isBoton_actualizar());
     }
     
     
@@ -491,7 +498,7 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_nuevo_cultivoActionPerformed
 
     private void btn_consultar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_cultivoActionPerformed
-        // TODO add your handling code here:
+        fnt_consultar_cultivo(txt_cod_cultivo.getText());
     }//GEN-LAST:event_btn_consultar_cultivoActionPerformed
 
     private void btn_guardar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_cultivoActionPerformed
