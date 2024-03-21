@@ -4,21 +4,19 @@
  */
 package presentacion;
 
-import vistas.cls_agricultor;
-import java.util.LinkedList;
+import vistas.*;
 import javax.swing.JOptionPane;
 
 
 public class frm_principal extends javax.swing.JFrame {
+    
+    private cls_agricultor_manager agricultor_manager = new cls_agricultor_manager();
     
     public frm_principal() {
         initComponents();
         btn_actualizar_agricultor.setEnabled(false);
         pnl_agricultor.setVisible(false);
     }
-    protected LinkedList<cls_agricultor> agricultor = new LinkedList<>();
-    protected boolean sw;
-    protected int pos;
     
     private void fnt_mostrar_panel_agricultor(){
         if (pnl_agricultor.isVisible() == false) {
@@ -27,58 +25,36 @@ public class frm_principal extends javax.swing.JFrame {
              pnl_agricultor.setVisible(false);
         }
     } 
-    protected void fnt_nuevo_agricultor(){
-        txt_id_agricultor.setText("");
+    public void fnt_guardar_agricultor(String id_str, String nombre_str, String contacto_str, String ubicacion_str){
+       agricultor_manager.fnt_guardar_agricultor(id_str, nombre_str, contacto_str, ubicacion_str);
+       fnt_nuevo_agricultor();
+    }
+    public void fnt_nuevo_agricultor(){
+        agricultor_manager.setSw(false);
+        agricultor_manager.setPos(0);
+        agricultor_manager.setBoton_actualizar(false);
+        agricultor_manager.setId_actualizar(true);
+        
         txt_contacto.setText("");
+        txt_id_agricultor.setText("");
         txt_nombre.setText("");
         txt_ubicacion.setText("");
         txt_id_agricultor.requestFocus();
-        txt_id_agricultor.setEnabled(true);
         btn_actualizar_agricultor.setEnabled(false);
-        sw = false;
-        pos = 0;
-    } 
-        public void fnt_guardar_agricultor(String id_str, String nombre_str, String contacto_str, String ubicacion_str){
-        if (!id_str.equals("") && !nombre_str.equals("") 
-                && !contacto_str.equals("") && !ubicacion_str.equals("")) {
-            agricultor.add(new cls_agricultor(id_str, nombre_str, contacto_str, ubicacion_str));
-            JOptionPane.showMessageDialog(null, "Agricultor registrado éxitosamente","AGRICULTOR",JOptionPane.INFORMATION_MESSAGE);
-            fnt_nuevo_agricultor();
-        }else{
-            JOptionPane.showMessageDialog(null, "Debe rellenar todos los datos solicitados","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
-        } 
+        txt_id_agricultor.setEnabled(true);
     }
+
+
     protected void fnt_consultar_agricultor(String id_str){
-        if (!id_str.equals("")) {
-            for(int i = 0; i < agricultor.size(); i++){
-                if (agricultor.get(i).getId_str().equals(id_str)) {
-                    sw = true;
-                    pos = i;
-                }
-            }
-            if (sw) {
-                txt_contacto.setText(agricultor.get(pos).getContacto_str());
-                txt_nombre.setText(agricultor.get(pos).getNombre_str());
-                txt_ubicacion.setText(agricultor.get(pos).getUbicacion_str());
-                txt_id_agricultor.setEnabled(false);
-                btn_actualizar_agricultor.setEnabled(true);
-            }else{
-                JOptionPane.showMessageDialog(null, "No se encontraron registros","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "Debe ingresar un ID válido","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
-        }
+        agricultor_manager.fnt_consultar_agricultor(id_str);
+        txt_contacto.setText(agricultor_manager.getContacto());
+        txt_nombre.setText(agricultor_manager.getNombre());
+        txt_ubicacion.setText(agricultor_manager.getUbicacion());
+        txt_id_agricultor.setEnabled(agricultor_manager.isId_actualizar());
+        btn_actualizar_agricultor.setEnabled(agricultor_manager.isBoton_actualizar());
     }
     protected void fnt_actualizar_agricultor(){
-        if (!txt_nombre.getText().equals("") && !txt_contacto.getText().equals("") 
-                && !txt_ubicacion.getText().equals("") && sw){
-            agricultor.get(pos).setContacto_str(txt_contacto.getText());
-            agricultor.get(pos).setNombre_str(txt_nombre.getText());
-            agricultor.get(pos).setUbicacion_str(txt_ubicacion.getText());
-            JOptionPane.showMessageDialog(null, "Agricultor actualizado éxitosamente","AGRICULTOR",JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(null, "Debe rellenar toda la información solicitada","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
-        }
+        agricultor_manager.fnt_actualizar_agricultor(txt_nombre.getText(), txt_contacto.getText(), txt_ubicacion.getText());
     }
     
     @SuppressWarnings("unchecked")
@@ -193,7 +169,7 @@ public class frm_principal extends javax.swing.JFrame {
 
         btn_nuevo_agricultor.setBackground(new java.awt.Color(5, 112, 147));
         btn_nuevo_agricultor.setForeground(new java.awt.Color(255, 255, 255));
-        btn_nuevo_agricultor.setText("Nuvo");
+        btn_nuevo_agricultor.setText("Nuevo");
         btn_nuevo_agricultor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_nuevo_agricultorActionPerformed(evt);
