@@ -40,4 +40,61 @@ public class cls_cultivos_manager {
         } 
     }
 
+    public boolean isSw() {
+        return sw;
+    }
+
+    public void setSw(boolean sw) {
+        this.sw = sw;
+    }
+
+    public boolean isBoton_actualizar() {
+        return boton_actualizar;
+    }
+
+    public void setBoton_actualizar(boolean boton_actualizar) {
+        this.boton_actualizar = boton_actualizar;
+    }
+
+    public boolean isId_actualizar() {
+        return id_actualizar;
+    }
+
+    public void setId_actualizar(boolean id_actualizar) {
+        this.id_actualizar = id_actualizar;
+    }
+
+    public int getPos() {
+        return pos;
+    }
+
+    public void setPos(int pos) {
+        this.pos = pos;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+    
+
 }

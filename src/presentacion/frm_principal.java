@@ -10,20 +10,36 @@ import vistas.*;
 public class frm_principal extends javax.swing.JFrame {
     
     private cls_agricultor_manager agricultor_manager = new cls_agricultor_manager();
+    private cls_cultivos_manager cultivo_manager = new cls_cultivos_manager();
     
     public frm_principal() {
         initComponents();
         btn_actualizar_agricultor.setEnabled(false);
+        btn_actualizar_cultivo.setEnabled(false);
         pnl_agricultor.setVisible(false);
+        pnl_cultivos.setVisible(false);
     }
     
     private void fnt_mostrar_panel_agricultor(){
         if (pnl_agricultor.isVisible() == false) {
             pnl_agricultor.setVisible(true);
+            pnl_cultivos.setVisible(false);
         }else{
              pnl_agricultor.setVisible(false);
+             pnl_cultivos.setVisible(false);
         }
     } 
+    private void fnt_mostrar_panel_cultivo(){
+        if (pnl_cultivos.isVisible() == false) {
+            pnl_agricultor.setVisible(false);
+            pnl_cultivos.setVisible(true);
+        }else{
+             pnl_agricultor.setVisible(false);
+             pnl_cultivos.setVisible(false);
+        }
+    } 
+    
+    ///Agricultor
     public void fnt_guardar_agricultor(String id_str, String nombre_str, String contacto_str, String ubicacion_str){
        agricultor_manager.fnt_guardar_agricultor(id_str, nombre_str, contacto_str, ubicacion_str);
        fnt_nuevo_agricultor();
@@ -43,7 +59,6 @@ public class frm_principal extends javax.swing.JFrame {
         txt_id_agricultor.setEnabled(true);
     }
 
-
     protected void fnt_consultar_agricultor(String id_str){
         agricultor_manager.fnt_consultar_agricultor(id_str);
         txt_contacto.setText(agricultor_manager.getContacto());
@@ -55,6 +70,26 @@ public class frm_principal extends javax.swing.JFrame {
     protected void fnt_actualizar_agricultor(){
         agricultor_manager.fnt_actualizar_agricultor(txt_nombre.getText(), txt_contacto.getText(), txt_ubicacion.getText());
     }
+    
+    ///Cultivo
+    public void fnt_guardar_cultivo(String codigo_str, String nombre_str, String area_str){
+       cultivo_manager.fnt_guardar_cultivo(codigo_str, nombre_str, area_str);
+       fnt_nuevo_cultivo();
+    }
+    public void fnt_nuevo_cultivo(){
+        cultivo_manager.setSw(false);
+        cultivo_manager.setPos(0);
+        cultivo_manager.setBoton_actualizar(false);
+        cultivo_manager.setId_actualizar(true);
+        
+        txt_area_cultivo.setText("");
+        txt_cod_cultivo.setText("");
+        txt_nombre_cultivo.setText("");
+        txt_cod_cultivo.requestFocus();
+        btn_actualizar_cultivo.setEnabled(false);
+        txt_cod_cultivo.setEnabled(true);
+    }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -102,6 +137,11 @@ public class frm_principal extends javax.swing.JFrame {
         btn_cultivos.setForeground(new java.awt.Color(255, 255, 255));
         btn_cultivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/recursos/sprout.png"))); // NOI18N
         btn_cultivos.setText("Cultivos");
+        btn_cultivos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cultivosActionPerformed(evt);
+            }
+        });
 
         btn_agricultor.setBackground(new java.awt.Color(5, 112, 147));
         btn_agricultor.setForeground(new java.awt.Color(255, 255, 255));
@@ -447,7 +487,7 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agricultorActionPerformed
 
     private void btn_nuevo_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevo_cultivoActionPerformed
-        // TODO add your handling code here:
+        fnt_nuevo_cultivo();
     }//GEN-LAST:event_btn_nuevo_cultivoActionPerformed
 
     private void btn_consultar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_cultivoActionPerformed
@@ -455,12 +495,16 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_consultar_cultivoActionPerformed
 
     private void btn_guardar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_cultivoActionPerformed
-        // TODO add your handling code here:
+        fnt_guardar_cultivo(txt_cod_cultivo.getText() ,txt_nombre_cultivo.getText(), txt_area_cultivo.getText());
     }//GEN-LAST:event_btn_guardar_cultivoActionPerformed
 
     private void btn_actualizar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_cultivoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_actualizar_cultivoActionPerformed
+
+    private void btn_cultivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cultivosActionPerformed
+        fnt_mostrar_panel_cultivo();
+    }//GEN-LAST:event_btn_cultivosActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
