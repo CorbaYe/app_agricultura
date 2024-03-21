@@ -21,7 +21,7 @@ public class frm_principal extends javax.swing.JFrame {
         btn_actualizar_cultivo.setEnabled(false);
         pnl_agricultor.setVisible(false);
         pnl_cultivos.setVisible(false);
-        pnl_labores.setVisible(true);
+        pnl_labores.setVisible(false);
         labores_manager.fnt_init_rowData();
         fnt_cargar_labores();
     }
@@ -29,19 +29,34 @@ public class frm_principal extends javax.swing.JFrame {
     private void fnt_mostrar_panel_agricultor(){
         if (pnl_agricultor.isVisible() == false) {
             pnl_agricultor.setVisible(true);
+            pnl_labores.setVisible(false);
             pnl_cultivos.setVisible(false);
         }else{
              pnl_agricultor.setVisible(false);
              pnl_cultivos.setVisible(false);
+             pnl_labores.setVisible(false);
         }
     } 
     private void fnt_mostrar_panel_cultivo(){
         if (pnl_cultivos.isVisible() == false) {
             pnl_agricultor.setVisible(false);
+            pnl_labores.setVisible(false);
             pnl_cultivos.setVisible(true);
         }else{
              pnl_agricultor.setVisible(false);
              pnl_cultivos.setVisible(false);
+             pnl_labores.setVisible(false);
+        }
+    } 
+    private void fnt_mostrar_panel_labores(){
+        if (pnl_labores.isVisible() == false) {
+            pnl_agricultor.setVisible(false);
+            pnl_cultivos.setVisible(false);
+            pnl_labores.setVisible(true);
+        }else{
+             pnl_agricultor.setVisible(false);
+             pnl_cultivos.setVisible(false);
+             pnl_labores.setVisible(false);
         }
     } 
     
@@ -192,6 +207,11 @@ public class frm_principal extends javax.swing.JFrame {
         btn_labores.setForeground(new java.awt.Color(255, 255, 255));
         btn_labores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/recursos/farmer (1).png"))); // NOI18N
         btn_labores.setText("Labores");
+        btn_labores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_laboresActionPerformed(evt);
+            }
+        });
 
         btn_registro.setBackground(new java.awt.Color(5, 112, 147));
         btn_registro.setForeground(new java.awt.Color(255, 255, 255));
@@ -710,6 +730,10 @@ public class frm_principal extends javax.swing.JFrame {
     private void btn_nueva_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nueva_laborActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_nueva_laborActionPerformed
+
+    private void btn_laboresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_laboresActionPerformed
+        fnt_mostrar_panel_labores();
+    }//GEN-LAST:event_btn_laboresActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
