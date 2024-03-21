@@ -24,7 +24,7 @@ public class cls_agricultor {
     public String getId_str() {
         return id_str;
     }
-
+    
     public String getNombre_str() {
         return nombre_str;
     }
