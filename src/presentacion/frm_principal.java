@@ -5,7 +5,6 @@
 package presentacion;
 
 import vistas.*;
-import javax.swing.JOptionPane;
 
 
 public class frm_principal extends javax.swing.JFrame {
