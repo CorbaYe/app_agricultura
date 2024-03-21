@@ -4,9 +4,10 @@
  */
 package presentacion;
 
+import vistas.cls_agricultor;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
-import vistas.cls_agricultor;
+
 
 public class frm_principal extends javax.swing.JFrame {
     
@@ -15,11 +16,29 @@ public class frm_principal extends javax.swing.JFrame {
         btn_actualizar_agricultor.setEnabled(false);
         pnl_agricultor.setVisible(false);
     }
-    private LinkedList<cls_agricultor> agricultor = new LinkedList<>();
-    private boolean sw;
-    private int pos;
+    protected LinkedList<cls_agricultor> agricultor = new LinkedList<>();
+    protected boolean sw;
+    protected int pos;
     
-    private void fnt_guardar_agricultor(String id_str, String nombre_str, String contacto_str, String ubicacion_str){
+    private void fnt_mostrar_panel_agricultor(){
+        if (pnl_agricultor.isVisible() == false) {
+            pnl_agricultor.setVisible(true);
+        }else{
+             pnl_agricultor.setVisible(false);
+        }
+    } 
+    protected void fnt_nuevo_agricultor(){
+        txt_id_agricultor.setText("");
+        txt_contacto.setText("");
+        txt_nombre.setText("");
+        txt_ubicacion.setText("");
+        txt_id_agricultor.requestFocus();
+        txt_id_agricultor.setEnabled(true);
+        btn_actualizar_agricultor.setEnabled(false);
+        sw = false;
+        pos = 0;
+    } 
+        public void fnt_guardar_agricultor(String id_str, String nombre_str, String contacto_str, String ubicacion_str){
         if (!id_str.equals("") && !nombre_str.equals("") 
                 && !contacto_str.equals("") && !ubicacion_str.equals("")) {
             agricultor.add(new cls_agricultor(id_str, nombre_str, contacto_str, ubicacion_str));
@@ -27,9 +46,9 @@ public class frm_principal extends javax.swing.JFrame {
             fnt_nuevo_agricultor();
         }else{
             JOptionPane.showMessageDialog(null, "Debe rellenar todos los datos solicitados","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
-        }
+        } 
     }
-    private void fnt_consultar_agricultor(String id_str){
+    protected void fnt_consultar_agricultor(String id_str){
         if (!id_str.equals("")) {
             for(int i = 0; i < agricultor.size(); i++){
                 if (agricultor.get(i).getId_str().equals(id_str)) {
@@ -50,7 +69,7 @@ public class frm_principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe ingresar un ID válido","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
         }
     }
-    private void fnt_actualizar_agricultor(){
+    protected void fnt_actualizar_agricultor(){
         if (!txt_nombre.getText().equals("") && !txt_contacto.getText().equals("") 
                 && !txt_ubicacion.getText().equals("") && sw){
             agricultor.get(pos).setContacto_str(txt_contacto.getText());
@@ -61,25 +80,7 @@ public class frm_principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe rellenar toda la información solicitada","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
         }
     }
-    private void fnt_nuevo_agricultor(){
-        txt_id_agricultor.setText("");
-        txt_contacto.setText("");
-        txt_nombre.setText("");
-        txt_ubicacion.setText("");
-        txt_id_agricultor.requestFocus();
-        txt_id_agricultor.setEnabled(true);
-        btn_actualizar_agricultor.setEnabled(false);
-        sw = false;
-        pos = 0;
-    }
-    private void fnt_mostrar_panel(){
-        if (pnl_agricultor.isVisible() == false) {
-            pnl_agricultor.setVisible(true);
-        }else{
-             pnl_agricultor.setVisible(false);
-        }
-    }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -344,7 +345,7 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_actualizar_agricultorActionPerformed
 
     private void btn_agricultorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agricultorActionPerformed
-        fnt_mostrar_panel();
+        fnt_mostrar_panel_agricultor();
     }//GEN-LAST:event_btn_agricultorActionPerformed
 
     public static void main(String args[]) {
@@ -381,7 +382,7 @@ public class frm_principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Contacto;
-    private javax.swing.JButton btn_actualizar_agricultor;
+    protected javax.swing.JButton btn_actualizar_agricultor;
     private javax.swing.JButton btn_agricultor;
     private javax.swing.JButton btn_consultar_agricultor;
     private javax.swing.JButton btn_cultivos;
@@ -395,10 +396,10 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel pnl_agricultor;
-    private javax.swing.JTextField txt_contacto;
-    private javax.swing.JTextField txt_id_agricultor;
-    private javax.swing.JTextField txt_nombre;
-    private javax.swing.JTextField txt_ubicacion;
+    protected javax.swing.JPanel pnl_agricultor;
+    protected javax.swing.JTextField txt_contacto;
+    protected javax.swing.JTextField txt_id_agricultor;
+    protected javax.swing.JTextField txt_nombre;
+    protected javax.swing.JTextField txt_ubicacion;
     // End of variables declaration//GEN-END:variables
 }
