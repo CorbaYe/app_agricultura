@@ -18,7 +18,9 @@ public class frm_principal extends javax.swing.JFrame {
     public frm_principal() {
         initComponents();
         btn_actualizar_agricultor.setEnabled(false);
-        btn_actualizar_cultivo.setEnabled(false);
+        btn_actualizar_cultivo.setEnabled(false);        
+        btn_actualizar_labor.setEnabled(false);
+        
         pnl_agricultor.setVisible(false);
         pnl_cultivos.setVisible(false);
         pnl_labores.setVisible(false);
@@ -123,8 +125,26 @@ public class frm_principal extends javax.swing.JFrame {
     }
     ///Labores
     private void fnt_cargar_labores(){
-        labores_manager.fnt_labores_predefinidas();
+        tbl_labores.removeAll();
         tbl_labores.setModel(labores_manager.getRowData());
+    }
+    private void fnt_guardar_labor(String codigo_str, String nombre_str, String tiempo_str){
+       labores_manager.fnt_guardar_lobor(codigo_str, nombre_str, tiempo_str);
+       fnt_cargar_labores();
+       fnt_nuevo_labor();
+    }
+    private void fnt_nuevo_labor(){
+        labores_manager.setSw(false);
+        labores_manager.setPos(0);
+        labores_manager.setBoton_actualizar(false);
+        labores_manager.setId_actualizar(true);
+        
+        txt_cod_labor.setText("");
+        txt_nombre_labor.setText("");
+        txt_tiempo_labor.setText("");
+        txt_cod_labor.requestFocus();
+        btn_actualizar_labor.setEnabled(false);
+        txt_cod_labor.setEnabled(true);
     }
     
     @SuppressWarnings("unchecked")
@@ -720,7 +740,7 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_actualizar_laborActionPerformed
 
     private void btn_guardar_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_laborActionPerformed
-        // TODO add your handling code here:
+        fnt_guardar_labor(txt_cod_labor.getText(), txt_nombre_labor.getText(), txt_tiempo_labor.getText());
     }//GEN-LAST:event_btn_guardar_laborActionPerformed
 
     private void btn_consultar_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_laborActionPerformed
@@ -728,7 +748,7 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_consultar_laborActionPerformed
 
     private void btn_nueva_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nueva_laborActionPerformed
-        // TODO add your handling code here:
+       fnt_nuevo_labor();
     }//GEN-LAST:event_btn_nueva_laborActionPerformed
 
     private void btn_laboresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_laboresActionPerformed
