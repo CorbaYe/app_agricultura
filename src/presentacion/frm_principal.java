@@ -97,6 +97,9 @@ public class frm_principal extends javax.swing.JFrame {
         btn_actualizar_cultivo.setEnabled(cultivo_manager.isBoton_actualizar());
     }
     
+    private void fnt_actualizar_cultivo(){
+        cultivo_manager.fnt_actualizar_cultivos(txt_nombre_cultivo.getText(), txt_area_cultivo.getText());
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -506,7 +509,7 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_guardar_cultivoActionPerformed
 
     private void btn_actualizar_cultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_cultivoActionPerformed
-        // TODO add your handling code here:
+        fnt_actualizar_cultivo();
     }//GEN-LAST:event_btn_actualizar_cultivoActionPerformed
 
     private void btn_cultivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cultivosActionPerformed
