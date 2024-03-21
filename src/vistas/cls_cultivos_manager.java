@@ -39,6 +39,22 @@ public class cls_cultivos_manager {
             JOptionPane.showMessageDialog(null,"Debe rellenar todos los datos solicitados","CULTIVOS",JOptionPane.WARNING_MESSAGE);
         } 
     }
+    
+    public void fnt_consultar_cultivo(String codigo_str){
+        if (!codigo_str.equals("")) {
+            fnt_sub_consulta(codigo_str);
+            if (sw) {
+                area = (cultivos.get(pos).getArea_metros_str());
+                nombre = (cultivos.get(pos).getNombre_str());
+                id_actualizar = false;
+                boton_actualizar = true;
+            }else{
+                JOptionPane.showMessageDialog(null, "No se encontraron registros","CULTIVOS",JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe ingresar un CÓDIGO válido","CULTIVOS",JOptionPane.WARNING_MESSAGE);
+        }
+    }
 
     public boolean isSw() {
         return sw;
