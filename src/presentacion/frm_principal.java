@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import javax.swing.table.DefaultTableModel;
 import vistas.*;
 
 
@@ -11,6 +12,8 @@ public class frm_principal extends javax.swing.JFrame {
     
     private cls_agricultor_manager agricultor_manager = new cls_agricultor_manager();
     private cls_cultivos_manager cultivo_manager = new cls_cultivos_manager();
+    private cls_labores_manager labores_manager = new cls_labores_manager();
+    DefaultTableModel rowData = labores_manager.getRowData();
     
     public frm_principal() {
         initComponents();
@@ -18,6 +21,7 @@ public class frm_principal extends javax.swing.JFrame {
         btn_actualizar_cultivo.setEnabled(false);
         pnl_agricultor.setVisible(false);
         pnl_cultivos.setVisible(false);
+        fnt_cargar_labores();
     }
     
     private void fnt_mostrar_panel_agricultor(){
@@ -99,6 +103,14 @@ public class frm_principal extends javax.swing.JFrame {
     
     private void fnt_actualizar_cultivo(){
         cultivo_manager.fnt_actualizar_cultivos(txt_nombre_cultivo.getText(), txt_area_cultivo.getText());
+    }
+    ///Labores
+    private void fnt_cargar_labores(){
+        labores_manager.fnt_labores_predefinidas();
+        for (cls_labores labor : labores_manager.getLabores()) {
+            rowData.addRow(new Object[]{labor.getCodigo_str(), labor.getNombre_str(), labor.getTiempo_str()});
+        }
+        tbl_labores.setModel(labores_manager.getRowData());
     }
     
     @SuppressWarnings("unchecked")
