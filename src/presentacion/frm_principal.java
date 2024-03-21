@@ -112,6 +112,20 @@ public class frm_principal extends javax.swing.JFrame {
         btn_labores = new javax.swing.JButton();
         btn_registro = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        pnl_labores = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        txt_cod_labor = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txt_nombre_labor = new javax.swing.JTextField();
+        Contacto2 = new javax.swing.JLabel();
+        txt_tiempo_labor = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_labores = new javax.swing.JTable();
+        btn_actualizar_labor = new javax.swing.JButton();
+        btn_guardar_labor = new javax.swing.JButton();
+        btn_consultar_labor = new javax.swing.JButton();
+        btn_nueva_labor = new javax.swing.JButton();
         pnl_cultivos = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txt_cod_cultivo = new javax.swing.JTextField();
@@ -204,6 +218,158 @@ public class frm_principal extends javax.swing.JFrame {
         );
 
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnl_labores.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Labores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setText("Código:");
+
+        txt_cod_labor.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setText("Nombre:");
+
+        txt_nombre_labor.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        Contacto2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Contacto2.setText("Tiempo:");
+
+        txt_tiempo_labor.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Labores existentes"));
+
+        tbl_labores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "CÓDIGO", "NOMBRE", "TIEMPO"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tbl_labores);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        btn_actualizar_labor.setBackground(new java.awt.Color(5, 112, 147));
+        btn_actualizar_labor.setForeground(new java.awt.Color(255, 255, 255));
+        btn_actualizar_labor.setText("Actualizar");
+        btn_actualizar_labor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actualizar_laborActionPerformed(evt);
+            }
+        });
+
+        btn_guardar_labor.setBackground(new java.awt.Color(5, 112, 147));
+        btn_guardar_labor.setForeground(new java.awt.Color(255, 255, 255));
+        btn_guardar_labor.setText("Guardar");
+        btn_guardar_labor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardar_laborActionPerformed(evt);
+            }
+        });
+
+        btn_consultar_labor.setBackground(new java.awt.Color(5, 112, 147));
+        btn_consultar_labor.setForeground(new java.awt.Color(255, 255, 255));
+        btn_consultar_labor.setText("Consultar");
+        btn_consultar_labor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultar_laborActionPerformed(evt);
+            }
+        });
+
+        btn_nueva_labor.setBackground(new java.awt.Color(5, 112, 147));
+        btn_nueva_labor.setForeground(new java.awt.Color(255, 255, 255));
+        btn_nueva_labor.setText("Nuevo");
+        btn_nueva_labor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nueva_laborActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnl_laboresLayout = new javax.swing.GroupLayout(pnl_labores);
+        pnl_labores.setLayout(pnl_laboresLayout);
+        pnl_laboresLayout.setHorizontalGroup(
+            pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnl_laboresLayout.createSequentialGroup()
+                .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_laboresLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnl_laboresLayout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_nombre_labor, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_laboresLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_cod_labor, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_laboresLayout.createSequentialGroup()
+                                .addComponent(Contacto2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_tiempo_labor, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnl_laboresLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_consultar_labor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_nueva_labor, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_guardar_labor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_actualizar_labor, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl_laboresLayout.setVerticalGroup(
+            pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_laboresLayout.createSequentialGroup()
+                .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txt_cod_labor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txt_nombre_labor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Contacto2)
+                    .addComponent(txt_tiempo_labor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_nueva_labor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_guardar_labor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_laboresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_actualizar_labor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultar_labor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.add(pnl_labores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
 
         pnl_cultivos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cultivos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
 
@@ -516,6 +682,22 @@ public class frm_principal extends javax.swing.JFrame {
         fnt_mostrar_panel_cultivo();
     }//GEN-LAST:event_btn_cultivosActionPerformed
 
+    private void btn_actualizar_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_laborActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_actualizar_laborActionPerformed
+
+    private void btn_guardar_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_laborActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_guardar_laborActionPerformed
+
+    private void btn_consultar_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_laborActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_consultar_laborActionPerformed
+
+    private void btn_nueva_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nueva_laborActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_nueva_laborActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -551,15 +733,20 @@ public class frm_principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Contacto;
     private javax.swing.JLabel Contacto1;
+    private javax.swing.JLabel Contacto2;
     protected javax.swing.JButton btn_actualizar_agricultor;
     protected javax.swing.JButton btn_actualizar_cultivo;
+    protected javax.swing.JButton btn_actualizar_labor;
     private javax.swing.JButton btn_agricultor;
     private javax.swing.JButton btn_consultar_agricultor;
     private javax.swing.JButton btn_consultar_cultivo;
+    private javax.swing.JButton btn_consultar_labor;
     private javax.swing.JButton btn_cultivos;
     private javax.swing.JButton btn_guardar_agricultor;
     private javax.swing.JButton btn_guardar_cultivo;
+    private javax.swing.JButton btn_guardar_labor;
     private javax.swing.JButton btn_labores;
+    private javax.swing.JButton btn_nueva_labor;
     private javax.swing.JButton btn_nuevo_agricultor;
     private javax.swing.JButton btn_nuevo_cultivo;
     private javax.swing.JButton btn_registro;
@@ -568,17 +755,26 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     protected javax.swing.JPanel pnl_agricultor;
     protected javax.swing.JPanel pnl_cultivos;
+    protected javax.swing.JPanel pnl_labores;
+    private javax.swing.JTable tbl_labores;
     protected javax.swing.JTextField txt_area_cultivo;
     protected javax.swing.JTextField txt_cod_cultivo;
+    protected javax.swing.JTextField txt_cod_labor;
     protected javax.swing.JTextField txt_contacto;
     protected javax.swing.JTextField txt_id_agricultor;
     protected javax.swing.JTextField txt_nombre;
     protected javax.swing.JTextField txt_nombre_cultivo;
+    protected javax.swing.JTextField txt_nombre_labor;
+    protected javax.swing.JTextField txt_tiempo_labor;
     protected javax.swing.JTextField txt_ubicacion;
     // End of variables declaration//GEN-END:variables
 }
