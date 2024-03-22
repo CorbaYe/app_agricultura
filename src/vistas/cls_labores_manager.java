@@ -30,12 +30,6 @@ public class cls_labores_manager {
         }
     }
     
-    public void fnt_labores_nuevas(){
-        for(int i = 0; i < labores.size(); i++) {
-            rowData.addRow(new Object[]{labores.get(i).getCodigo_str(),labores.get(i).getNombre_str(),labores.get(i).getTiempo_str()});
-        }
-    }
-    
     private void fnt_sub_consulta(String codigo){
         for(int i = 0; i < labores.size(); i++){
             if (labores.get(i).getCodigo_str().equals(codigo)) {
@@ -44,13 +38,14 @@ public class cls_labores_manager {
             }
         }
     }
+    
     public void fnt_guardar_lobor(String codigo_str, String nombre_str, String tiempo_str){
         sw = false;
         if (!codigo_str.equals("") && !nombre_str.equals("") && !tiempo_str.equals("")) {
             fnt_sub_consulta(codigo_str);
             if (!sw) {
                 labores.add(new cls_labores(codigo_str, nombre_str, tiempo_str));
-                fnt_labores_nuevas();
+                rowData.addRow(new Object[]{labores.get(labores.size() - 1).getCodigo_str(),labores.get(labores.size() - 1).getNombre_str(),labores.get(labores.size() - 1).getTiempo_str()});
                 JOptionPane.showMessageDialog(null, "labor registrado éxitosamente","LABORES",JOptionPane.INFORMATION_MESSAGE);
             }else{
                 JOptionPane.showMessageDialog(null,"Se encontro un registro existente con el mismo CÓDIGO","LABORES",JOptionPane.WARNING_MESSAGE);
