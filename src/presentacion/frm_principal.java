@@ -7,7 +7,6 @@ package presentacion;
 import javax.swing.table.DefaultTableModel;
 import vistas.*;
 
-
 public class frm_principal extends javax.swing.JFrame {
     
     private cls_agricultor_manager agricultor_manager = new cls_agricultor_manager();
@@ -145,6 +144,17 @@ public class frm_principal extends javax.swing.JFrame {
         txt_cod_labor.requestFocus();
         btn_actualizar_labor.setEnabled(false);
         txt_cod_labor.setEnabled(true);
+    }
+    private void fnt_consultar_labor(String codigo_str){
+        labores_manager.fnt_consultar_labor(codigo_str);
+        txt_nombre_labor.setText(labores_manager.getNombre());
+        txt_tiempo_labor.setText(labores_manager.getTiempo());
+        txt_cod_labor.setEnabled(labores_manager.isId_actualizar());
+        btn_actualizar_labor.setEnabled(labores_manager.isBoton_actualizar());
+    }
+    
+    private void fnt_actualizar_labor(){
+        labores_manager.fnt_actualizar_labor(txt_nombre_labor.getText(), txt_tiempo_labor.getText());
     }
     
     @SuppressWarnings("unchecked")
@@ -736,7 +746,7 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_cultivosActionPerformed
 
     private void btn_actualizar_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_laborActionPerformed
-        // TODO add your handling code here:
+        fnt_actualizar_labor();
     }//GEN-LAST:event_btn_actualizar_laborActionPerformed
 
     private void btn_guardar_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_laborActionPerformed
@@ -744,7 +754,7 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_guardar_laborActionPerformed
 
     private void btn_consultar_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_laborActionPerformed
-        // TODO add your handling code here:
+        fnt_consultar_labor(txt_cod_labor.getText());
     }//GEN-LAST:event_btn_consultar_laborActionPerformed
 
     private void btn_nueva_laborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nueva_laborActionPerformed

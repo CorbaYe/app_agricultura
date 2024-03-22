@@ -54,6 +54,32 @@ public class cls_labores_manager {
             JOptionPane.showMessageDialog(null,"Debe rellenar todos los datos solicitados","LABORES",JOptionPane.WARNING_MESSAGE);
         } 
     }
+    
+        public void fnt_consultar_labor(String codigo_str){
+        if (!codigo_str.equals("")) {
+            fnt_sub_consulta(codigo_str);
+            if (sw) {
+                tiempo = (labores.get(pos).getTiempo_str());
+                nombre = (labores.get(pos).getNombre_str());
+                id_actualizar = false;
+                boton_actualizar = true;
+            }else{
+                JOptionPane.showMessageDialog(null, "No se encontraron registros","LABORES",JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe ingresar un CÓDIGO válido","LABORES",JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    public void fnt_actualizar_labor(String nombre_str, String tiempo_str){
+        if (!nombre_str.equals("") && !tiempo_str.equals("") && sw){
+            labores.get(pos).setNombre_str(nombre_str);
+            labores.get(pos).setTiempo_str(tiempo_str);
+            JOptionPane.showMessageDialog(null, "Labor actualizada éxitosamente","LABORES",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe rellenar toda la información solicitada","LABORES",JOptionPane.WARNING_MESSAGE);
+        }
+    }
 
     public DefaultTableModel getRowData() {
         return rowData;
