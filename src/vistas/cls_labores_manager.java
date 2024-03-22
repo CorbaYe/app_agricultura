@@ -75,6 +75,7 @@ public class cls_labores_manager {
         if (!nombre_str.equals("") && !tiempo_str.equals("") && sw){
             labores.get(pos).setNombre_str(nombre_str);
             labores.get(pos).setTiempo_str(tiempo_str);
+            rowData.addRow(new Object[]{labores.get(pos).getCodigo_str(),labores.get(pos).getNombre_str(),labores.get(pos).getTiempo_str()});
             JOptionPane.showMessageDialog(null, "Labor actualizada éxitosamente","LABORES",JOptionPane.INFORMATION_MESSAGE);
         }else{
             JOptionPane.showMessageDialog(null, "Debe rellenar toda la información solicitada","LABORES",JOptionPane.WARNING_MESSAGE);
