@@ -124,7 +124,6 @@ public class frm_principal extends javax.swing.JFrame {
     }
     ///Labores
     private void fnt_cargar_labores(){
-        tbl_labores.removeAll();
         tbl_labores.setModel(labores_manager.getRowData());
     }
     private void fnt_guardar_labor(String codigo_str, String nombre_str, String tiempo_str){
