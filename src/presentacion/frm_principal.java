@@ -167,6 +167,43 @@ public class frm_principal extends javax.swing.JFrame {
         btn_labores = new javax.swing.JButton();
         btn_registro = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        pnl_registos = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        txt_id_agricultor_registros = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txt_codigo_cultivo_registro = new javax.swing.JTextField();
+        Contacto3 = new javax.swing.JLabel();
+        txt_codigo_labor_registro = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txt_observaciones_registro = new javax.swing.JTextField();
+        btn_nuevo_registro = new javax.swing.JButton();
+        btn_consultar_registro = new javax.swing.JButton();
+        btn_guardar_registro = new javax.swing.JButton();
+        btn_actualizar_registro = new javax.swing.JButton();
+        pnl_agricultor = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txt_id_agricultor = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txt_nombre = new javax.swing.JTextField();
+        Contacto = new javax.swing.JLabel();
+        txt_contacto = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txt_ubicacion = new javax.swing.JTextField();
+        btn_nuevo_agricultor = new javax.swing.JButton();
+        btn_consultar_agricultor = new javax.swing.JButton();
+        btn_guardar_agricultor = new javax.swing.JButton();
+        btn_actualizar_agricultor = new javax.swing.JButton();
+        pnl_cultivos = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_cod_cultivo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_nombre_cultivo = new javax.swing.JTextField();
+        Contacto1 = new javax.swing.JLabel();
+        txt_area_cultivo = new javax.swing.JTextField();
+        btn_nuevo_cultivo = new javax.swing.JButton();
+        btn_consultar_cultivo = new javax.swing.JButton();
+        btn_guardar_cultivo = new javax.swing.JButton();
+        btn_actualizar_cultivo = new javax.swing.JButton();
         pnl_labores = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         txt_cod_labor = new javax.swing.JTextField();
@@ -181,30 +218,6 @@ public class frm_principal extends javax.swing.JFrame {
         btn_guardar_labor = new javax.swing.JButton();
         btn_consultar_labor = new javax.swing.JButton();
         btn_nueva_labor = new javax.swing.JButton();
-        pnl_cultivos = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        txt_cod_cultivo = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txt_nombre_cultivo = new javax.swing.JTextField();
-        Contacto1 = new javax.swing.JLabel();
-        txt_area_cultivo = new javax.swing.JTextField();
-        btn_nuevo_cultivo = new javax.swing.JButton();
-        btn_consultar_cultivo = new javax.swing.JButton();
-        btn_guardar_cultivo = new javax.swing.JButton();
-        btn_actualizar_cultivo = new javax.swing.JButton();
-        pnl_agricultor = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        txt_id_agricultor = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txt_nombre = new javax.swing.JTextField();
-        Contacto = new javax.swing.JLabel();
-        txt_contacto = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txt_ubicacion = new javax.swing.JTextField();
-        btn_nuevo_agricultor = new javax.swing.JButton();
-        btn_consultar_agricultor = new javax.swing.JButton();
-        btn_guardar_agricultor = new javax.swing.JButton();
-        btn_actualizar_agricultor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -278,6 +291,374 @@ public class frm_principal extends javax.swing.JFrame {
         );
 
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnl_registos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel8.setText("ID agricultor:");
+
+        txt_id_agricultor_registros.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setText("Código cultivo:");
+
+        txt_codigo_cultivo_registro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        Contacto3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Contacto3.setText("Código labor:");
+
+        txt_codigo_labor_registro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel10.setText("Observaciones:");
+
+        txt_observaciones_registro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        btn_nuevo_registro.setBackground(new java.awt.Color(5, 112, 147));
+        btn_nuevo_registro.setForeground(new java.awt.Color(255, 255, 255));
+        btn_nuevo_registro.setText("Nuevo");
+        btn_nuevo_registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuevo_registroActionPerformed(evt);
+            }
+        });
+
+        btn_consultar_registro.setBackground(new java.awt.Color(5, 112, 147));
+        btn_consultar_registro.setForeground(new java.awt.Color(255, 255, 255));
+        btn_consultar_registro.setText("Consultar");
+        btn_consultar_registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultar_registroActionPerformed(evt);
+            }
+        });
+
+        btn_guardar_registro.setBackground(new java.awt.Color(5, 112, 147));
+        btn_guardar_registro.setForeground(new java.awt.Color(255, 255, 255));
+        btn_guardar_registro.setText("Guardar");
+        btn_guardar_registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardar_registroActionPerformed(evt);
+            }
+        });
+
+        btn_actualizar_registro.setBackground(new java.awt.Color(5, 112, 147));
+        btn_actualizar_registro.setForeground(new java.awt.Color(255, 255, 255));
+        btn_actualizar_registro.setText("Actualizar");
+        btn_actualizar_registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actualizar_registroActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnl_registosLayout = new javax.swing.GroupLayout(pnl_registos);
+        pnl_registos.setLayout(pnl_registosLayout);
+        pnl_registosLayout.setHorizontalGroup(
+            pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_registosLayout.createSequentialGroup()
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnl_registosLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnl_registosLayout.createSequentialGroup()
+                                .addComponent(Contacto3)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_codigo_labor_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_registosLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_codigo_cultivo_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_registosLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_id_agricultor_registros, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnl_registosLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_observaciones_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_registosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_consultar_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btn_nuevo_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_guardar_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_actualizar_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
+        );
+        pnl_registosLayout.setVerticalGroup(
+            pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_registosLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txt_id_agricultor_registros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(txt_codigo_cultivo_registro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Contacto3)
+                    .addComponent(txt_codigo_labor_registro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(txt_observaciones_registro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_nuevo_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(btn_guardar_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_actualizar_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultar_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.add(pnl_registos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
+
+        pnl_agricultor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agricultor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("ID:");
+
+        txt_id_agricultor.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setText("Nombre:");
+
+        txt_nombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        Contacto.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Contacto.setText("Contacto:");
+
+        txt_contacto.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("Ubicación:");
+
+        txt_ubicacion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        btn_nuevo_agricultor.setBackground(new java.awt.Color(5, 112, 147));
+        btn_nuevo_agricultor.setForeground(new java.awt.Color(255, 255, 255));
+        btn_nuevo_agricultor.setText("Nuevo");
+        btn_nuevo_agricultor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuevo_agricultorActionPerformed(evt);
+            }
+        });
+
+        btn_consultar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
+        btn_consultar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
+        btn_consultar_agricultor.setText("Consultar");
+        btn_consultar_agricultor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultar_agricultorActionPerformed(evt);
+            }
+        });
+
+        btn_guardar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
+        btn_guardar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
+        btn_guardar_agricultor.setText("Guardar");
+        btn_guardar_agricultor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardar_agricultorActionPerformed(evt);
+            }
+        });
+
+        btn_actualizar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
+        btn_actualizar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
+        btn_actualizar_agricultor.setText("Actualizar");
+        btn_actualizar_agricultor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actualizar_agricultorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnl_agricultorLayout = new javax.swing.GroupLayout(pnl_agricultor);
+        pnl_agricultor.setLayout(pnl_agricultorLayout);
+        pnl_agricultorLayout.setHorizontalGroup(
+            pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_agricultorLayout.createSequentialGroup()
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_agricultorLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnl_agricultorLayout.createSequentialGroup()
+                                .addComponent(Contacto)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_contacto, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_agricultorLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_agricultorLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_id_agricultor, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnl_agricultorLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_ubicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(99, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_agricultorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_consultar_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btn_nuevo_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_guardar_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_actualizar_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
+        );
+        pnl_agricultorLayout.setVerticalGroup(
+            pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_agricultorLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txt_id_agricultor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Contacto)
+                    .addComponent(txt_contacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txt_ubicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_nuevo_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(btn_guardar_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_actualizar_agricultor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultar_agricultor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.add(pnl_agricultor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
+
+        pnl_cultivos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cultivos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setText("Codigo:");
+
+        txt_cod_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel5.setText("Nombre:");
+
+        txt_nombre_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        Contacto1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Contacto1.setText("Area(m^2:)");
+
+        txt_area_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        btn_nuevo_cultivo.setBackground(new java.awt.Color(5, 112, 147));
+        btn_nuevo_cultivo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_nuevo_cultivo.setText("Nuevo");
+        btn_nuevo_cultivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuevo_cultivoActionPerformed(evt);
+            }
+        });
+
+        btn_consultar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
+        btn_consultar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_consultar_cultivo.setText("Consultar");
+        btn_consultar_cultivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultar_cultivoActionPerformed(evt);
+            }
+        });
+
+        btn_guardar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
+        btn_guardar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_guardar_cultivo.setText("Guardar");
+        btn_guardar_cultivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardar_cultivoActionPerformed(evt);
+            }
+        });
+
+        btn_actualizar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
+        btn_actualizar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
+        btn_actualizar_cultivo.setText("Actualizar");
+        btn_actualizar_cultivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actualizar_cultivoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnl_cultivosLayout = new javax.swing.GroupLayout(pnl_cultivos);
+        pnl_cultivos.setLayout(pnl_cultivosLayout);
+        pnl_cultivosLayout.setHorizontalGroup(
+            pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cultivosLayout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_consultar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btn_nuevo_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_guardar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_actualizar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
+            .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                        .addComponent(Contacto1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_area_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_nombre_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_cod_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl_cultivosLayout.setVerticalGroup(
+            pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_cultivosLayout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txt_cod_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txt_nombre_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Contacto1)
+                    .addComponent(txt_area_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_nuevo_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(btn_guardar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_actualizar_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultar_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.add(pnl_cultivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
 
         pnl_labores.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Labores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
 
@@ -433,246 +814,6 @@ public class frm_principal extends javax.swing.JFrame {
 
         jLayeredPane1.add(pnl_labores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
 
-        pnl_cultivos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cultivos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel3.setText("Codigo:");
-
-        txt_cod_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel5.setText("Nombre:");
-
-        txt_nombre_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        Contacto1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Contacto1.setText("Area(m^2:)");
-
-        txt_area_cultivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        btn_nuevo_cultivo.setBackground(new java.awt.Color(5, 112, 147));
-        btn_nuevo_cultivo.setForeground(new java.awt.Color(255, 255, 255));
-        btn_nuevo_cultivo.setText("Nuevo");
-        btn_nuevo_cultivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevo_cultivoActionPerformed(evt);
-            }
-        });
-
-        btn_consultar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
-        btn_consultar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
-        btn_consultar_cultivo.setText("Consultar");
-        btn_consultar_cultivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultar_cultivoActionPerformed(evt);
-            }
-        });
-
-        btn_guardar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
-        btn_guardar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
-        btn_guardar_cultivo.setText("Guardar");
-        btn_guardar_cultivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_guardar_cultivoActionPerformed(evt);
-            }
-        });
-
-        btn_actualizar_cultivo.setBackground(new java.awt.Color(5, 112, 147));
-        btn_actualizar_cultivo.setForeground(new java.awt.Color(255, 255, 255));
-        btn_actualizar_cultivo.setText("Actualizar");
-        btn_actualizar_cultivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_actualizar_cultivoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnl_cultivosLayout = new javax.swing.GroupLayout(pnl_cultivos);
-        pnl_cultivos.setLayout(pnl_cultivosLayout);
-        pnl_cultivosLayout.setHorizontalGroup(
-            pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cultivosLayout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
-                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_consultar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(btn_nuevo_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(29, 29, 29)
-                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_guardar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_actualizar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                .addGap(59, 59, 59))
-            .addGroup(pnl_cultivosLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
-                        .addComponent(Contacto1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_area_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_nombre_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnl_cultivosLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_cod_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnl_cultivosLayout.setVerticalGroup(
-            pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_cultivosLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txt_cod_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txt_nombre_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Contacto1)
-                    .addComponent(txt_area_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81)
-                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_nuevo_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(btn_guardar_cultivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnl_cultivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_actualizar_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_consultar_cultivo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        jLayeredPane1.add(pnl_cultivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
-
-        pnl_agricultor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agricultor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("ID:");
-
-        txt_id_agricultor.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("Nombre:");
-
-        txt_nombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        Contacto.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Contacto.setText("Contacto:");
-
-        txt_contacto.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel4.setText("Ubicación:");
-
-        txt_ubicacion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        btn_nuevo_agricultor.setBackground(new java.awt.Color(5, 112, 147));
-        btn_nuevo_agricultor.setForeground(new java.awt.Color(255, 255, 255));
-        btn_nuevo_agricultor.setText("Nuevo");
-        btn_nuevo_agricultor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevo_agricultorActionPerformed(evt);
-            }
-        });
-
-        btn_consultar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
-        btn_consultar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
-        btn_consultar_agricultor.setText("Consultar");
-        btn_consultar_agricultor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultar_agricultorActionPerformed(evt);
-            }
-        });
-
-        btn_guardar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
-        btn_guardar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
-        btn_guardar_agricultor.setText("Guardar");
-        btn_guardar_agricultor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_guardar_agricultorActionPerformed(evt);
-            }
-        });
-
-        btn_actualizar_agricultor.setBackground(new java.awt.Color(5, 112, 147));
-        btn_actualizar_agricultor.setForeground(new java.awt.Color(255, 255, 255));
-        btn_actualizar_agricultor.setText("Actualizar");
-        btn_actualizar_agricultor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_actualizar_agricultorActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnl_agricultorLayout = new javax.swing.GroupLayout(pnl_agricultor);
-        pnl_agricultor.setLayout(pnl_agricultorLayout);
-        pnl_agricultorLayout.setHorizontalGroup(
-            pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_agricultorLayout.createSequentialGroup()
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl_agricultorLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnl_agricultorLayout.createSequentialGroup()
-                                .addComponent(Contacto)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_contacto, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnl_agricultorLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnl_agricultorLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_id_agricultor, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(pnl_agricultorLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_ubicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(99, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_agricultorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_consultar_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(btn_nuevo_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(29, 29, 29)
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_guardar_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_actualizar_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                .addGap(59, 59, 59))
-        );
-        pnl_agricultorLayout.setVerticalGroup(
-            pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_agricultorLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txt_id_agricultor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Contacto)
-                    .addComponent(txt_contacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txt_ubicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_nuevo_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(btn_guardar_agricultor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnl_agricultorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_actualizar_agricultor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_consultar_agricultor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        jLayeredPane1.add(pnl_agricultor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -764,6 +905,22 @@ public class frm_principal extends javax.swing.JFrame {
         fnt_mostrar_panel_labores();
     }//GEN-LAST:event_btn_laboresActionPerformed
 
+    private void btn_nuevo_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevo_registroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_nuevo_registroActionPerformed
+
+    private void btn_consultar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_registroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_consultar_registroActionPerformed
+
+    private void btn_guardar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_registroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_guardar_registroActionPerformed
+
+    private void btn_actualizar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_registroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_actualizar_registroActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -800,29 +957,37 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JLabel Contacto;
     private javax.swing.JLabel Contacto1;
     private javax.swing.JLabel Contacto2;
+    private javax.swing.JLabel Contacto3;
     protected javax.swing.JButton btn_actualizar_agricultor;
     protected javax.swing.JButton btn_actualizar_cultivo;
     protected javax.swing.JButton btn_actualizar_labor;
+    protected javax.swing.JButton btn_actualizar_registro;
     private javax.swing.JButton btn_agricultor;
     private javax.swing.JButton btn_consultar_agricultor;
     private javax.swing.JButton btn_consultar_cultivo;
     private javax.swing.JButton btn_consultar_labor;
+    private javax.swing.JButton btn_consultar_registro;
     private javax.swing.JButton btn_cultivos;
     private javax.swing.JButton btn_guardar_agricultor;
     private javax.swing.JButton btn_guardar_cultivo;
     private javax.swing.JButton btn_guardar_labor;
+    private javax.swing.JButton btn_guardar_registro;
     private javax.swing.JButton btn_labores;
     private javax.swing.JButton btn_nueva_labor;
     private javax.swing.JButton btn_nuevo_agricultor;
     private javax.swing.JButton btn_nuevo_cultivo;
+    private javax.swing.JButton btn_nuevo_registro;
     private javax.swing.JButton btn_registro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -831,15 +996,20 @@ public class frm_principal extends javax.swing.JFrame {
     protected javax.swing.JPanel pnl_agricultor;
     protected javax.swing.JPanel pnl_cultivos;
     protected javax.swing.JPanel pnl_labores;
+    protected javax.swing.JPanel pnl_registos;
     private javax.swing.JTable tbl_labores;
     protected javax.swing.JTextField txt_area_cultivo;
     protected javax.swing.JTextField txt_cod_cultivo;
     protected javax.swing.JTextField txt_cod_labor;
+    protected javax.swing.JTextField txt_codigo_cultivo_registro;
+    protected javax.swing.JTextField txt_codigo_labor_registro;
     protected javax.swing.JTextField txt_contacto;
     protected javax.swing.JTextField txt_id_agricultor;
+    protected javax.swing.JTextField txt_id_agricultor_registros;
     protected javax.swing.JTextField txt_nombre;
     protected javax.swing.JTextField txt_nombre_cultivo;
     protected javax.swing.JTextField txt_nombre_labor;
+    protected javax.swing.JTextField txt_observaciones_registro;
     protected javax.swing.JTextField txt_tiempo_labor;
     protected javax.swing.JTextField txt_ubicacion;
     // End of variables declaration//GEN-END:variables
