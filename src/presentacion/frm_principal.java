@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import vistas.*;
 
@@ -12,6 +13,7 @@ public class frm_principal extends javax.swing.JFrame {
     private cls_agricultor_manager agricultor_manager = new cls_agricultor_manager();
     private cls_cultivos_manager cultivo_manager = new cls_cultivos_manager();
     private cls_labores_manager labores_manager = new cls_labores_manager();
+    private cls_registros_manager registros_manager = new cls_registros_manager();
     DefaultTableModel rowData = labores_manager.getRowData();
     
     public frm_principal() {
@@ -23,6 +25,7 @@ public class frm_principal extends javax.swing.JFrame {
         pnl_agricultor.setVisible(false);
         pnl_cultivos.setVisible(false);
         pnl_labores.setVisible(false);
+        pnl_registos.setVisible(false);
         labores_manager.fnt_init_rowData();
         fnt_cargar_labores();
     }
@@ -32,32 +35,51 @@ public class frm_principal extends javax.swing.JFrame {
             pnl_agricultor.setVisible(true);
             pnl_labores.setVisible(false);
             pnl_cultivos.setVisible(false);
+            pnl_registos.setVisible(false);
         }else{
              pnl_agricultor.setVisible(false);
              pnl_cultivos.setVisible(false);
              pnl_labores.setVisible(false);
+             pnl_registos.setVisible(false);
         }
     } 
     private void fnt_mostrar_panel_cultivo(){
         if (pnl_cultivos.isVisible() == false) {
             pnl_agricultor.setVisible(false);
             pnl_labores.setVisible(false);
+            pnl_registos.setVisible(false);
             pnl_cultivos.setVisible(true);
         }else{
              pnl_agricultor.setVisible(false);
              pnl_cultivos.setVisible(false);
              pnl_labores.setVisible(false);
+             pnl_registos.setVisible(false);
         }
     } 
     private void fnt_mostrar_panel_labores(){
         if (pnl_labores.isVisible() == false) {
             pnl_agricultor.setVisible(false);
             pnl_cultivos.setVisible(false);
+            pnl_registos.setVisible(false);
             pnl_labores.setVisible(true);
         }else{
              pnl_agricultor.setVisible(false);
              pnl_cultivos.setVisible(false);
              pnl_labores.setVisible(false);
+             pnl_registos.setVisible(false);
+        }
+    } 
+    private void fnt_mostrar_panel_registro(){
+        if (pnl_registos.isVisible() == false) {
+            pnl_agricultor.setVisible(false);
+            pnl_cultivos.setVisible(false);
+            pnl_labores.setVisible(false);
+            pnl_registos.setVisible(true);
+        }else{
+             pnl_agricultor.setVisible(false);
+             pnl_cultivos.setVisible(false);
+             pnl_labores.setVisible(false);
+             pnl_registos.setVisible(false);
         }
     } 
     
@@ -155,7 +177,43 @@ public class frm_principal extends javax.swing.JFrame {
     private void fnt_actualizar_labor(){
         labores_manager.fnt_actualizar_labor(txt_nombre_labor.getText(), txt_tiempo_labor.getText());
     }
+    //Registros
+    private boolean fnt_validar_registro(String id_agricultor, String codigo_labor, String codigo_cultivo){
+        fnt_nuevo_agricultor();
+        fnt_nuevo_cultivo();
+        fnt_nuevo_labor();
+        agricultor_manager.fnt_sub_consulta(id_agricultor);
+        labores_manager.fnt_sub_consulta(codigo_labor);
+        cultivo_manager.fnt_sub_consulta(codigo_cultivo);
+        if (!agricultor_manager.isSw()) {
+            JOptionPane.showMessageDialog(null, "No se encontrarón registros del agricultor","REGISTRO",JOptionPane.WARNING_MESSAGE);
+        }if (!labores_manager.isSw()) {
+            JOptionPane.showMessageDialog(null, "No se encontrarón registros de la labor","REGISTRO",JOptionPane.WARNING_MESSAGE);
+        }if (!cultivo_manager.isSw()) {
+            JOptionPane.showMessageDialog(null, "No se encontrarón registros del cultivo","REGISTRO",JOptionPane.WARNING_MESSAGE);
+        }
+        return agricultor_manager.isSw() && labores_manager.isSw() && cultivo_manager.isSw();
+    }
     
+    private void fnt_guardar_registro(String id_agricultor, String codigo_labor, 
+            String codigo_cultivo, String observaciones, String fecha){
+        if (fnt_validar_registro(id_agricultor, codigo_labor, codigo_cultivo) == true) {
+            registros_manager.fnt_guardar_registro(id_agricultor, codigo_labor, codigo_cultivo, observaciones, fecha);
+            fnt_nuevo_registro();
+        }
+    }
+    
+    private void fnt_nuevo_registro(){
+        registros_manager.setSw(false);
+        registros_manager.setPos(0);
+        
+        txt_codigo_cultivo_registro.setText("");
+        txt_codigo_labor_registro.setText("");
+        txt_id_agricultor_registros.setText("");
+        txt_observaciones_registro.setText("");
+        txt_fecha_registro.setText("");
+        txt_id_agricultor_registros.requestFocus();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -177,9 +235,9 @@ public class frm_principal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txt_observaciones_registro = new javax.swing.JTextField();
         btn_nuevo_registro = new javax.swing.JButton();
-        btn_consultar_registro = new javax.swing.JButton();
         btn_guardar_registro = new javax.swing.JButton();
-        btn_actualizar_registro = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        txt_fecha_registro = new javax.swing.JTextField();
         pnl_agricultor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txt_id_agricultor = new javax.swing.JTextField();
@@ -259,6 +317,11 @@ public class frm_principal extends javax.swing.JFrame {
         btn_registro.setForeground(new java.awt.Color(255, 255, 255));
         btn_registro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/recursos/farmer (1).png"))); // NOI18N
         btn_registro.setText("Registros");
+        btn_registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -323,15 +386,6 @@ public class frm_principal extends javax.swing.JFrame {
             }
         });
 
-        btn_consultar_registro.setBackground(new java.awt.Color(5, 112, 147));
-        btn_consultar_registro.setForeground(new java.awt.Color(255, 255, 255));
-        btn_consultar_registro.setText("Consultar");
-        btn_consultar_registro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultar_registroActionPerformed(evt);
-            }
-        });
-
         btn_guardar_registro.setBackground(new java.awt.Color(5, 112, 147));
         btn_guardar_registro.setForeground(new java.awt.Color(255, 255, 255));
         btn_guardar_registro.setText("Guardar");
@@ -341,19 +395,21 @@ public class frm_principal extends javax.swing.JFrame {
             }
         });
 
-        btn_actualizar_registro.setBackground(new java.awt.Color(5, 112, 147));
-        btn_actualizar_registro.setForeground(new java.awt.Color(255, 255, 255));
-        btn_actualizar_registro.setText("Actualizar");
-        btn_actualizar_registro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_actualizar_registroActionPerformed(evt);
-            }
-        });
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel11.setText("Fecha:");
+
+        txt_fecha_registro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout pnl_registosLayout = new javax.swing.GroupLayout(pnl_registos);
         pnl_registos.setLayout(pnl_registosLayout);
         pnl_registosLayout.setHorizontalGroup(
             pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_registosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_nuevo_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(btn_guardar_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
             .addGroup(pnl_registosLayout.createSequentialGroup()
                 .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnl_registosLayout.createSequentialGroup()
@@ -373,20 +429,17 @@ public class frm_principal extends javax.swing.JFrame {
                                 .addComponent(txt_id_agricultor_registros, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(pnl_registosLayout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_observaciones_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10))
+                        .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnl_registosLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txt_observaciones_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_registosLayout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(txt_fecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(42, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_registosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_consultar_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(btn_nuevo_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(29, 29, 29)
-                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_guardar_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_actualizar_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                .addGap(59, 59, 59))
         );
         pnl_registosLayout.setVerticalGroup(
             pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,15 +460,15 @@ public class frm_principal extends javax.swing.JFrame {
                 .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(txt_observaciones_registro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_nuevo_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(btn_guardar_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_actualizar_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_consultar_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(jLabel11)
+                    .addComponent(txt_fecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(pnl_registosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_nuevo_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_guardar_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68))
         );
 
         jLayeredPane1.add(pnl_registos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 450, 440));
@@ -906,20 +959,20 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_laboresActionPerformed
 
     private void btn_nuevo_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevo_registroActionPerformed
-        // TODO add your handling code here:
+        fnt_nuevo_registro();
     }//GEN-LAST:event_btn_nuevo_registroActionPerformed
 
-    private void btn_consultar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_registroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_consultar_registroActionPerformed
-
     private void btn_guardar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar_registroActionPerformed
-        // TODO add your handling code here:
+        fnt_guardar_registro(txt_id_agricultor_registros.getText(),
+                txt_codigo_labor_registro.getText(),
+                txt_codigo_cultivo_registro.getText(),
+                txt_observaciones_registro.getText(), 
+                txt_fecha_registro.getText());
     }//GEN-LAST:event_btn_guardar_registroActionPerformed
 
-    private void btn_actualizar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_registroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_actualizar_registroActionPerformed
+    private void btn_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registroActionPerformed
+        fnt_mostrar_panel_registro();
+    }//GEN-LAST:event_btn_registroActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -961,12 +1014,10 @@ public class frm_principal extends javax.swing.JFrame {
     protected javax.swing.JButton btn_actualizar_agricultor;
     protected javax.swing.JButton btn_actualizar_cultivo;
     protected javax.swing.JButton btn_actualizar_labor;
-    protected javax.swing.JButton btn_actualizar_registro;
     private javax.swing.JButton btn_agricultor;
     private javax.swing.JButton btn_consultar_agricultor;
     private javax.swing.JButton btn_consultar_cultivo;
     private javax.swing.JButton btn_consultar_labor;
-    private javax.swing.JButton btn_consultar_registro;
     private javax.swing.JButton btn_cultivos;
     private javax.swing.JButton btn_guardar_agricultor;
     private javax.swing.JButton btn_guardar_cultivo;
@@ -980,6 +1031,7 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_registro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1004,6 +1056,7 @@ public class frm_principal extends javax.swing.JFrame {
     protected javax.swing.JTextField txt_codigo_cultivo_registro;
     protected javax.swing.JTextField txt_codigo_labor_registro;
     protected javax.swing.JTextField txt_contacto;
+    protected javax.swing.JTextField txt_fecha_registro;
     protected javax.swing.JTextField txt_id_agricultor;
     protected javax.swing.JTextField txt_id_agricultor_registros;
     protected javax.swing.JTextField txt_nombre;

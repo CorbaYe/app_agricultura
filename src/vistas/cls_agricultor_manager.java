@@ -37,7 +37,7 @@ public class cls_agricultor_manager {
             JOptionPane.showMessageDialog(null,"Debe rellenar todos los datos solicitados","AGRICULTOR",JOptionPane.WARNING_MESSAGE);
         } 
     }
-    private void fnt_sub_consulta(String id_str){
+    public void fnt_sub_consulta(String id_str){
         for(int i = 0; i < agricultor.size(); i++){
             if (agricultor.get(i).getId_str().equals(id_str)) {
                 sw = true;

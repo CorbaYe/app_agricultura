@@ -13,12 +13,22 @@ public class cls_registros {
     private String codigo_labor_str;
     private String codigo_cultivo_str;
     private String observaciones_str;
+    private String fecha_str;
 
-    public cls_registros(String id_agricultor_str, String codigo_labor_str, String codigo_cultivo_str, String observaciones_str) {
+    public cls_registros(String id_agricultor_str, String codigo_labor_str, String codigo_cultivo_str, String observaciones_str, String fecha_str) {
         this.id_agricultor_str = id_agricultor_str;
         this.codigo_labor_str = codigo_labor_str;
         this.codigo_cultivo_str = codigo_cultivo_str;
         this.observaciones_str = observaciones_str;
+        this.fecha_str = fecha_str;
+    }
+
+    public String getFecha_str() {
+        return fecha_str;
+    }
+
+    public void setFecha_str(String fecha_str) {
+        this.fecha_str = fecha_str;
     }
 
     public String getId_agricultor_str() {

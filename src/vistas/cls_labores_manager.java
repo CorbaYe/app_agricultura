@@ -30,7 +30,7 @@ public class cls_labores_manager {
         }
     }
     
-    private void fnt_sub_consulta(String codigo){
+    public void fnt_sub_consulta(String codigo){
         for(int i = 0; i < labores.size(); i++){
             if (labores.get(i).getCodigo_str().equals(codigo)) {
                 sw = true;

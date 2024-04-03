@@ -17,7 +17,7 @@ public class cls_cultivos_manager {
     protected String nombre;
     protected String area;
     
-    private void fnt_sub_consulta(String codigo){
+    public void fnt_sub_consulta(String codigo){
         for(int i = 0; i < cultivos.size(); i++){
             if (cultivos.get(i).getCodigo_str().equals(codigo)) {
                 sw = true;
